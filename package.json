@@ -1,0 +1,15 @@
+{
+  "name": "esf-crm",
+  "version": "0.1.0",
+  "description": "Style Framework for CRM",
+  "contributors": [
+    {
+      "name": "treelite",
+      "email": "c.xinle@gmail.com"
+    },
+    {
+      "name": "coocon",
+      "email": "coocon2007@gmail.com"
+    }
+  ]
+}

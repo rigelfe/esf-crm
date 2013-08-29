@@ -1,0 +1,62 @@
+/**
+ * @file 页面设置
+ * @author treelite(c.xinle@gmail.com)
+ */
+
+// 重置est变量
+@support-old-ie: true;
+@support-html5: false;
+@default-font-size: 12px;
+@default-text-color: #333;
+@default-base-font-family: Arial,Helvetica,STHeiti,SimSun,sans-serif;
+@default-border-radius: 3px;
+
+// 全局字体相关设置
+@r-font-size: 12px;
+@r-font-color: #333;
+@r-font-family: Arial,Helvetica,STHeiti,SimSun,sans-serif;
+@r-font-heading-family: 'Microsoft Yahei', Arial, sans-serif;
+@r-font-line-height: 1.5;
+
+// 全局超链接相关设置
+@r-link-color: #407FC8;
+@r-link-underline: false;
+@r-link-hover-underline: true;
+@r-link-hover-color: #407FC8;
+
+// 页面配置
+@r-page-min-width: 960px;
+
+.r-utils-gap(@margin:0, @padding:0) {
+    margin: @margin;
+    padding: @padding;
+}
+
+.r-text-underline(@has) when (@has = true) {
+    text-decoration: underline;
+}
+
+.r-text-underline(@has) when (@has = false) {
+    text-decoration: none;
+}
+
+.global-normalize();
+
+html, body {
+    .r-utils-gap();
+    font-size: @r-font-size;
+    line-height: @r-font-line-height;
+    font-family: @r-font-family;
+    color: @r-font-color;
+    min-width: @r-page-min-width;
+}
+
+a {
+    color: @r-link-color;
+    .r-text-underline(@r-link-underline);
+}
+
+a:hover {
+    color: @r-link-hover-color;
+    .r-text-underline(@r-link-hover-underline);
+}

@@ -1,0 +1,110 @@
+/**
+ * @file 页面头部
+ * @author treelite(c.xinle@gmail.com)
+ */
+
+// 头部高度
+@r-header-height: 60px;
+// 头部背景 默认为颜色
+// 实际使用一般都是背景横向平铺
+@r-header-background: #4287D2;
+// 背景主色
+@r-header-color: #4287D2;
+
+// logo高度
+@r-logo-height: 60px;
+// logo宽度
+@r-logo-width: 250px;
+// logo margin
+// 用于控制logo位置
+@r-logo-margin: 0 0 10px 0;
+// logo背景
+// 项目中使用背景图片
+@r-logo-background: #4287D2;
+
+// 用户信息区字体颜色
+@r-user-info-color: #FFF;
+// 用户信息区字体大小
+@r-user-info-font-size: 14px;
+// 用户信息区margin
+// 用于控制位置
+@r-user-info-margin: 35px 15px 0px 0;
+
+@r-pos-tree-width: 100px;
+
+.header {
+    height: @r-header-height;
+    background: @r-header-background;
+}
+
+.header h1 {
+    float: left;
+    .r-utils-gap(@r-logo-margin);
+    height: @r-logo-height;
+    width: @r-logo-width;
+    background: @r-logo-background;
+    text-indent: -1000px;
+}
+
+.header .user-info {
+    float: right;
+    text-align: right;
+    font-size: @r-user-info-font-size;
+    font-family: @r-font-heading-family;
+    .r-utils-gap(@r-user-info-margin);
+    color: @r-user-info-color;
+}
+
+.header .user-info a {
+    color: @r-user-info-color;
+}
+
+.header .user-info i {
+    .r-utils-gap(0 5px);
+    font-style: normal;
+}
+
+.header .pos-tree {
+    position: relative;
+    .inline-block();
+    .r-text-underline(false);
+    cursor: pointer;
+}
+
+.header .pos-tree ul {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    right: -1px;
+    top: @r-user-info-font-size * @r-font-line-height;
+    border: 1px solid @r-header-color;
+    border-top: 0;
+    background: @r-user-info-color;
+    color: @r-header-color;
+    .r-utils-gap(0, 3px);
+    .no-bullet();
+    .border-radius();
+    .border-top-right-radius(0px);
+}
+
+.header .pos-tree li {
+    .r-utils-gap(0, 2px 3px);
+    width: @r-pos-tree-width;
+}
+
+.header .pos-tree:hover {
+    .r-utils-gap(0 -5px, 0 5px);
+    .border-top-left-radius(3px);
+    .border-top-right-radius(3px);
+    color: @r-header-color;
+    background: #FFF;
+}
+
+.header .pos-tree:hover ul {
+   display: block; 
+}
+
+.header .pos-tree:hover li:hover {
+    background: @r-header-color;
+    color: @r-user-info-color;
+}
